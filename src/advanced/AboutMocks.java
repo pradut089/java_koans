@@ -17,6 +17,13 @@ public class AboutMocks {
     }
 
 
+    static class PassingCollaborator implements Collaborator{
+        public void doBusinessStuff(){
+         //   fail("default collaboator's behaviour is complicating testing.")
+        }
+    }
+
+
 
 
     static class ClassUnderTest {
@@ -25,7 +32,7 @@ public class AboutMocks {
         public ClassUnderTest() {
             // default is to pass a broken Collaborator, test should pass one
             // that doesn't throw exception
-            this(new ExplosiveCollaborator());
+            this(new PassingCollaborator());
         }
 
         public ClassUnderTest(Collaborator c) {
